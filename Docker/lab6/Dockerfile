@@ -1,0 +1,11 @@
+FROM python:3.15.0a3-alpine3.23
+
+WORKDIR /app
+
+COPY . .
+ENV APP_MODE=prod APP_REGION=canada-west
+RUN pip install flask
+
+EXPOSE 8080
+
+CMD ["python", "app.py"]
